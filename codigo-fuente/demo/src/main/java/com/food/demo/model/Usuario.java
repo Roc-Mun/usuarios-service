@@ -1,8 +1,6 @@
 package com.food.demo.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Entity
@@ -11,24 +9,19 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id_usuario")
+    private Long idUsuario;
 
-    @NotBlank(message = "El nombre es obligatorio")
     private String nombre;
 
-    @Email(message = "Correo inválido")
-    @NotBlank(message = "El correo es obligatorio")
     @Column(unique = true)
     private String correo;
 
-    @NotBlank(message = "El teléfono es obligatorio")
-    private String telefono;
+    private String contrasena;
 
-    @NotBlank(message = "El tipo de usuario es obligatorio")
-    private String tipo; 
-    // ORGANIZADOR, STAND, CLIENTE
+    private String rol;
+    private String estado;
 }
