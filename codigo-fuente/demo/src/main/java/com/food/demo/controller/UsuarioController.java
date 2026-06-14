@@ -1,5 +1,11 @@
 package com.food.demo.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -16,7 +22,7 @@ import com.food.demo.dto.UsuarioUpdateDTO;
 import com.food.demo.service.UsuarioService;
 
 @RestController
-@RequestMapping("/api/v2/usuarios")
+@RequestMapping("/api/v3/usuarios")
 public class UsuarioController {
 
     private final UsuarioService service;
